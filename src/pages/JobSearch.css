@@ -1,0 +1,66 @@
+.job-search {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.job-search-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.job-search-header h1 {
+  font-size: 2.5rem;
+  color: #2c3e50;
+  margin-bottom: 0.5rem;
+}
+
+.job-search-header p {
+  font-size: 1.2rem;
+  color: #7f8c8d;
+}
+
+.search-section {
+  padding: 1rem 0;
+  margin-bottom: 2rem;
+}
+
+.results-section {
+  padding: 1rem 0;
+}
+
+.results-header {
+  margin-bottom: 1.5rem;
+}
+
+.results-header h2 {
+  color: #2c3e50;
+  font-size: 1.5rem;
+}
+
+.loading {
+  text-align: center;
+  padding: 2rem;
+  font-size: 1.2rem;
+  color: #7f8c8d;
+}
+
+.job-listings {
+  display: grid;
+  gap: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .job-search {
+    padding: 1rem;
+  }
+
+  .job-search-header h1 {
+    font-size: 2rem;
+  }
+
+  .search-section,
+  .results-section {
+    padding: 1rem;
+  }
+}

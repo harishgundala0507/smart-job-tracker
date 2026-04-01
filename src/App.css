@@ -1,0 +1,41 @@
+.app-layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main-content {
+  flex: 1;
+  padding: 1.5rem;
+  max-width: 1440px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .main-content {
+    padding: 0.75rem;
+  }
+}
+
+/* Animation Utilities for React Toastify Overrides */
+.Toastify__toast-theme--light,
+.Toastify__toast-theme--dark {
+  background: var(--glass-bg) !important;
+  backdrop-filter: blur(16px) !important;
+  -webkit-backdrop-filter: blur(16px) !important;
+  border: 1px solid var(--glass-border) !important;
+  color: var(--text-primary) !important;
+  border-radius: 12px !important;
+  box-shadow: var(--shadow-md) !important;
+}
+
+.Toastify__close-button {
+  color: var(--text-secondary) !important;
+}
+
+/* Page transitions standard class */
+.page-transition {
+  width: 100%;
+  height: 100%;
+}
