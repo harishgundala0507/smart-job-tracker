@@ -4,14 +4,16 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import './Dashboard.css';
 
-const StatCard = ({ title, value, icon, colorClass }) => (
-  <div className={`stat-card glass-container ${colorClass}`}>
-    <div className="stat-icon">{icon}</div>
-    <div className="stat-details">
-      <h3>{value}</h3>
-      <p>{title}</p>
+const StatCard = ({ title, value, icon, colorClass, linkTo }) => (
+  <Link to={linkTo} className="stat-card-link">
+    <div className={`stat-card glass-container ${colorClass}`}>
+      <div className="stat-icon">{icon}</div>
+      <div className="stat-details">
+        <h3>{value}</h3>
+        <p>{title}</p>
+      </div>
     </div>
-  </div>
+  </Link>
 );
 
 const Dashboard = () => {
@@ -45,10 +47,10 @@ const Dashboard = () => {
       </div>
 
       <div className="stats-grid">
-        <StatCard title="Total Applications" value={stats.total} icon={<FiBriefcase />} colorClass="stat-blue" />
-        <StatCard title="Interviews" value={stats.interviewing} icon={<FiCalendar />} colorClass="stat-yellow" />
-        <StatCard title="Offers" value={stats.offers} icon={<FiCheckCircle />} colorClass="stat-green" />
-        <StatCard title="Rejections" value={stats.rejections} icon={<FiXCircle />} colorClass="stat-red" />
+        <StatCard title="Total Applications" value={stats.total} icon={<FiBriefcase />} colorClass="stat-blue" linkTo="/applications?status=All" />
+        <StatCard title="Interviews" value={stats.interviewing} icon={<FiCalendar />} colorClass="stat-yellow" linkTo="/applications?status=Interviewing" />
+        <StatCard title="Offers" value={stats.offers} icon={<FiCheckCircle />} colorClass="stat-green" linkTo="/applications?status=Offer" />
+        <StatCard title="Rejections" value={stats.rejections} icon={<FiXCircle />} colorClass="stat-red" linkTo="/applications?status=Rejected" />
       </div>
 
       <div className="recent-section glass-container">

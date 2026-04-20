@@ -1,4 +1,5 @@
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useEffect } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import { useApplications } from '../hooks/useApplications';
 import { useDebounce } from '../hooks/useDebounce';
 import JobCard from '../components/JobCard';
@@ -11,9 +12,17 @@ const TABS = ['All', 'Bookmarked', 'Applied', 'Interviewing', 'Offer', 'Rejected
 
 const Applications = () => {
   const { applications } = useApplications();
+  const [searchParams] = useSearchParams();
   const [searchTerm, setSearchTerm] = useState('');
   const [activeTab, setActiveTab] = useState('All');
   const [filters, setFilters] = useState({ status: '', platform: '', sort: 'newest' });
+
+  useEffect(() => {
+    const statusParam = searchParams.get('status');
+    if (statusParam && TABS.includes(statusParam)) {
+      setActiveTab(statusParam);
+    }
+  }, [searchParams]);
 
   const debouncedSearch = useDebounce(searchTerm, 300);
 

@@ -31,10 +31,23 @@
   border-radius: 12px;
   box-shadow: var(--shadow-sm);
   transition: all var(--transition-normal);
+  cursor: pointer;
+  height: 100%;
+}
+
+.stat-card-link {
+  text-decoration: none;
+  color: inherit;
+  transition: transform var(--transition-fast);
+}
+
+.stat-card-link:hover {
+  transform: translateY(-4px);
 }
 
 .stat-card:hover {
-  box-shadow: var(--shadow-md);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--primary-color);
 }
 
 .stat-icon {
